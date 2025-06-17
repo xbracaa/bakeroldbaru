@@ -1,11 +1,14 @@
 <?php
 session_start();
+date_default_timezone_set('Asia/Jakarta');
 include("config/db.php");
 
 // Pastikan koneksi database sudah terjalin
 if (!$koneksi) {
     die("Koneksi database gagal: " . mysqli_connect_error());
 }
+
+
 
 // Cek jika transaksi belum disimpan di session
 if (!isset($_SESSION['transaksi_selesai'])) {
